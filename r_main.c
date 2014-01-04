@@ -76,26 +76,6 @@ void clear_rx_array(char array[200]);
 ***********************************************************************************************************************/
 void main(void)
 {
-    /* Start user code. Do not edit comment generated here */
-    R_UART2_Start();
-    R_UART1_Start();
-    R_UART0_Start();
-    
-    R_UART0_Send("GET GPS ROUTINE\n\r",17);
-    Delay(50);
-       
-    while (1U)
-    {
-     P3.1 = 0 ;
-     clear_rx_array(Receive_data);
-     Delay(50);
-    
-     R_UART1_Receive(Receive_data, 200);
-     
-    // Receive_data[1] = 'K';
-    // Receive_data[3] = 'G';
-     //if(rx_buf != "")
-     //{
        // R_UART1_Receive(Receive_data, 30);
      //}
      Delay(200);
