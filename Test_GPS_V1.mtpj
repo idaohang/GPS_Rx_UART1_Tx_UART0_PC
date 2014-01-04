@@ -29,6 +29,7 @@
       <RelativePath>r_lk.dr</RelativePath>
       <TreeImageGuid>a4460d02-6943-4122-9169-dd699e916213</TreeImageGuid>
       <ParentItem>dbaa6ed8-6207-4318-adf3-8df406f3d7f8</ParentItem>
+      <Property>3609afd3-4b4e-4e2b-992e-fdb98f4d0b24</Property>
     </Instance>
     <Instance Guid="90f641a0-5159-4a60-b822-a87a24ed3afe">
       <Name>Application.h</Name>
@@ -74,6 +75,7 @@
       <RelativePath>r_cg_cgc_user.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>d98f4c07-153f-4fea-936f-fdb943133b1b</ParentItem>
+      <Property>13a24e9d-bf80-493d-b41e-815e89f0ce65</Property>
     </Instance>
     <Instance Guid="cb8eb394-47c6-4b82-bb65-d82aba25b987">
       <Name>r_cg_port.c</Name>
@@ -118,6 +120,7 @@
       <RelativePath>r_cg_wdt_user.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>d98f4c07-153f-4fea-936f-fdb943133b1b</ParentItem>
+      <Property>782fb73b-be72-4654-9c6e-e97305431d5c</Property>
     </Instance>
     <Instance Guid="cffbeac0-99d4-4b9a-b479-2184183e8d5f">
       <Name>r_cg_macrodriver.h</Name>
@@ -189,6 +192,15 @@
       <MemoCount>0</MemoCount>
     </Instance>
     <Instance Guid="4bf835bd-c5bb-491d-beb3-90aafaf81995">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="13a24e9d-bf80-493d-b41e-815e89f0ce65">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="782fb73b-be72-4654-9c6e-e97305431d5c">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="3609afd3-4b4e-4e2b-992e-fdb98f4d0b24">
       <MemoCount>0</MemoCount>
     </Instance>
   </Class>
@@ -2151,43 +2163,43 @@ cl0rmf.lib
     &lt;/FUNC&gt;
     &lt;TAG&gt;
       &lt;GlobleUserTag&gt;
+        &lt;pior_value Name="pior_value" Value="00" /&gt;
         &lt;cg_security7 Name="cg_security7" Value="00" /&gt;
+        &lt;cg_security3 Name="cg_security3" Value="00" /&gt;
         &lt;wdt_option Name="wdt_option" Value="FF" /&gt;
         &lt;cg_security6 Name="cg_security6" Value="00" /&gt;
         &lt;cg_security1 Name="cg_security1" Value="00" /&gt;
         &lt;lvi_option Name="lvi_option" Value="FF" /&gt;
-        &lt;cg_security5 Name="cg_security5" Value="00" /&gt;
-        &lt;cg_security0 Name="cg_security0" Value="00" /&gt;
-        &lt;cg_security4 Name="cg_security4" Value="00" /&gt;
         &lt;clock_option Name="clock_option" Value="E9" /&gt;
-        &lt;cg_security3 Name="cg_security3" Value="00" /&gt;
+        &lt;cg_security4 Name="cg_security4" Value="00" /&gt;
+        &lt;cg_security0 Name="cg_security0" Value="00" /&gt;
         &lt;cg_security9 Name="cg_security9" Value="00" /&gt;
         &lt;cg_security2 Name="cg_security2" Value="00" /&gt;
-        &lt;pior_value Name="pior_value" Value="00" /&gt;
+        &lt;cg_security8 Name="cg_security8" Value="00" /&gt;
         &lt;cg_option Name="cg_option" Value="04" /&gt;
         &lt;cg_iawctl_value Name="cg_iawctl_value" Value="00" /&gt;
-        &lt;cg_security8 Name="cg_security8" Value="00" /&gt;
+        &lt;cg_security5 Name="cg_security5" Value="00" /&gt;
         &lt;ocdstart Name="ocdstart" Value="01E00" /&gt;
       &lt;/GlobleUserTag&gt;
     &lt;/TAG&gt;
     &lt;TAG&gt;
       &lt;GlobleUserTag&gt;
-        &lt;pior_value Name="pior_value" Value="00" /&gt;
         &lt;cg_security7 Name="cg_security7" Value="00" /&gt;
-        &lt;cg_security3 Name="cg_security3" Value="00" /&gt;
         &lt;wdt_option Name="wdt_option" Value="FF" /&gt;
         &lt;cg_security6 Name="cg_security6" Value="00" /&gt;
         &lt;cg_security1 Name="cg_security1" Value="00" /&gt;
         &lt;lvi_option Name="lvi_option" Value="FF" /&gt;
-        &lt;clock_option Name="clock_option" Value="E9" /&gt;
-        &lt;cg_security4 Name="cg_security4" Value="00" /&gt;
+        &lt;cg_security5 Name="cg_security5" Value="00" /&gt;
         &lt;cg_security0 Name="cg_security0" Value="00" /&gt;
+        &lt;cg_security4 Name="cg_security4" Value="00" /&gt;
+        &lt;clock_option Name="clock_option" Value="E9" /&gt;
+        &lt;cg_security3 Name="cg_security3" Value="00" /&gt;
         &lt;cg_security9 Name="cg_security9" Value="00" /&gt;
         &lt;cg_security2 Name="cg_security2" Value="00" /&gt;
-        &lt;cg_security8 Name="cg_security8" Value="00" /&gt;
+        &lt;pior_value Name="pior_value" Value="00" /&gt;
         &lt;cg_option Name="cg_option" Value="04" /&gt;
         &lt;cg_iawctl_value Name="cg_iawctl_value" Value="00" /&gt;
-        &lt;cg_security5 Name="cg_security5" Value="00" /&gt;
+        &lt;cg_security8 Name="cg_security8" Value="00" /&gt;
         &lt;ocdstart Name="ocdstart" Value="01E00" /&gt;
       &lt;/GlobleUserTag&gt;
     &lt;/TAG&gt;
@@ -3076,7 +3088,7 @@ cl0rmf.lib
           &lt;setting name="Receive_data_direction" value="LSB" /&gt;
           &lt;setting name="Receive_data_length" value="8 bits" /&gt;
           &lt;setting name="Receive_parity" value="none" /&gt;
-          &lt;setting name="RecBaudrate" value="4800" /&gt;
+          &lt;setting name="RecBaudrate" value="9600" /&gt;
           &lt;setting name="Receive_end_callback_function" value="generated" /&gt;
           &lt;setting name="Receive_error_callback_function" value="generated" /&gt;
           &lt;setting name="Transfer_mode" value="automatic" /&gt;

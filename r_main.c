@@ -55,15 +55,14 @@ Global variables and functions
 /* Start user code for global. Do not edit comment generated here */
 #define NULL " "
 
-unsigned char Receive_data[200],debug_msg_1[6];
-unsigned char TX_data;
-unsigned char TX_data1[17] = "Nothing to Read\n\r";
-unsigned char temp_var[70];
-char *test;
-__boolean flag;
-unsigned int i;
-MD_STATUS  sts ;
-//extern volatile __boolean flag ;
+unsigned char Receive_data[200];
+//unsigned char TX_data;
+//unsigned char TX_data1[17] = "Nothing to Read\n\r";
+//unsigned char temp_var[70];
+//char *test;
+//__boolean flag;
+unsigned int i,x;
+
 
 void clear_rx_array(char array[200]);
 /* End user code. Do not edit comment generated here */
@@ -76,24 +75,41 @@ void clear_rx_array(char array[200]);
 ***********************************************************************************************************************/
 void main(void)
 {
-       // R_UART1_Receive(Receive_data, 30);
-     //}
+    /* Start user code. Do not edit comment generated here */
+    R_UART2_Start();
+    R_UART1_Start();
+    R_UART0_Start();
+    
+    
+  //  R_UART0_Send("GET GPS ROUTINE\n\r",17);
+  //  Delay(50);
+       
+    while (1U)
+    {
+     P3.1 = 0 ;
+     clear_rx_array(Receive_data);
+     Delay(50);
+    
+     R_UART1_Receive(Receive_data, 200);  
      Delay(200);
-     //test = strstr((char *)Receive_data, "we");
-     //if(test)
-     //for(i=0;i<sizeof(Receive_data);i++)    
+     for(x=0;x<=sizeof(Receive_data);x++)
      {
-         P3.1 = 1;
-	 //if(Receive_data[i]!= NULL)
-         R_UART0_Send(Receive_data, 200);
+	     if(Receive_data[x] == ',' && Receive_data[x+1] == 'A' && Receive_data[x+2] == ',')
+	     {
+		unsigned char a[3]="YES";
+		R_UART0_Send(a, 3);
+     		Delay(200);
+	     	P3.1 = 1;
+	     	Delay(200);
+	     }
+     }
+    	
+     
+    // R_UART0_Send(Receive_data, 200);
          
-	 Delay(200);     
-//       for(i=0;i<(sizeof(Receive_data));i++)
-//       {
-//         debug_msg_1[i]= Receive_data[i];
-//       }
-//       R_UART0_Send(debug_msg_1, 80);
-        }
+	// Delay(200);     
+
+    
     }
     /* End user code. Do not edit comment generated here */
 }
