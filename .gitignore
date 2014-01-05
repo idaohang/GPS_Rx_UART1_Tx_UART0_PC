@@ -2,7 +2,7 @@
 ## CubeSuite+
 #################
 
-*.rel
+DefaultBuild/*.rel
 *.hex 
 
 #################
