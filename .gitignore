@@ -1,7 +1,9 @@
 #################
 ## CubeSuite+
 #################
-DefaultBuild/*
+
+*.rel
+*.hex 
 
 #################
 ## Eclipse
