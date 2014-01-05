@@ -55,16 +55,21 @@ Global variables and functions
 /* Start user code for global. Do not edit comment generated here */
 #define NULL " "
 
+//Define arrays
 unsigned char Receive_data[200];
-//unsigned char TX_data;
-//unsigned char TX_data1[17] = "Nothing to Read\n\r";
-//unsigned char temp_var[70];
-//char *test;
-//__boolean flag;
-unsigned int i,x;
+unsigned char gprmcLocked[18]="LOCK_ON_GPRMC | \r";
+unsigned char gpsDataNotLocked[24]="GPS_DATA_NOT_LOCKED | \r";
+unsigned char gpsDataLocked[20]="GPS_DATA_LOCKED | \r";
+unsigned char gpsDataStart[13]="GPS_DATA | \r";
+unsigned char gpsData[61];
+unsigned char gpsDataEnd[2]="\r";
 
+//Define variables
+unsigned int i,x,j,k;
 
+//Define user-defined methods
 void clear_rx_array(char array[200]);
+
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -76,10 +81,9 @@ void clear_rx_array(char array[200]);
 void main(void)
 {
     /* Start user code. Do not edit comment generated here */
-    R_UART2_Start();
-    R_UART1_Start();
-    R_UART0_Start();
-    
+     R_UART2_Start();
+     R_UART1_Start();
+     R_UART0_Start();
     
   //  R_UART0_Send("GET GPS ROUTINE\n\r",17);
   //  Delay(50);
@@ -92,27 +96,43 @@ void main(void)
     
      R_UART1_Receive(Receive_data, 200);  
      Delay(200);
+     
      for(x=0;x<=sizeof(Receive_data);x++)
      {
-	     if(Receive_data[x] == ',' && Receive_data[x+1] == 'A' && Receive_data[x+2] == ',')
+	     if(Receive_data[x] == '$' && Receive_data[x+1] == 'G' && Receive_data[x+2] == 'P' && Receive_data[x+3] == 'R' 
+	     		&& Receive_data[x+4] == 'M' && Receive_data[x+5] == 'C')
 	     {
-		unsigned char a[3]="YES";
-		R_UART0_Send(a, 3);
+		R_UART0_Send(gprmcLocked, 18);
      		Delay(200);
 	     	P3.1 = 1;
-	     	Delay(200);
+	     	//Delay(200);
+		
+		if(Receive_data[x+18] == 'V')
+			{
+				R_UART0_Send(gpsDataNotLocked, 24);
+    		 		Delay(100);
+			}
+		else if(Receive_data[x+18] == 'A')
+			{
+				R_UART0_Send(gpsDataLocked, 20);
+    		 		Delay(100);
+				R_UART0_Send(gpsDataStart, 13);\
+				Delay(100);
+				
+				k=x;
+				for(j=0;j<61;j++,k++)
+					gpsData[j]=Receive_data[k+6];
+				
+				R_UART0_Send(gpsData, 61);
+				Delay(500);
+				R_UART0_Send(gpsDataEnd, 2);
+				Delay(50);
+			}
 	     }
-     }
-    	
-     
-    // R_UART0_Send(Receive_data, 200);
-         
-	// Delay(200);     
-
-    
-    }
+	 }//End of for loop
+     }//End of while loop
+  }
     /* End user code. Do not edit comment generated here */
-}
 
 /* Start user code for adding. Do not edit comment generated here */
 void clear_rx_array(char array[])
